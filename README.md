@@ -48,8 +48,8 @@ message. To collect real subscribers (free + paid):
 ### Paid tier
 The **Membership** section on the home page already lays out Free vs
 **Khabar Pro**. With beehiiv, set up a paid tier in your dashboard and point
-the "Go Pro" button at its subscribe URL. Prices in the markup (₹399/mo,
-₹3,499/yr) are placeholders; edit in `index.html`.
+the "Go Pro" button at its subscribe URL. Prices in the markup (₹49/mo,
+₹490/yr) live in `index.html`; edit there.
 
 ## Personalise before launch
 
