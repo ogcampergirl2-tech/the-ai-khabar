@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is a Large Language Model, really? · The AI Khabar</title>
+<meta name="description" content="A no-math explanation of what an LLM actually is, using autocomplete, a library, and a very confident parrot.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav compact" aria-label="Primary">
+  <div class="wrap">
+    <a class="nav-brand" href="../index.html">The&nbsp;AI&nbsp;Khabar</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../blog.html" class="active">The Blog</a></li>
+      <li><a href="../index.html#membership">Membership</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html#subscribe">Subscribe</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+  <article class="article">
+    <div class="wrap">
+      <a class="backlink" href="../blog.html">← Back to the blog</a>
+      <div class="a-meta"><span class="tag">Khabar Explains</span> &nbsp;·&nbsp; 17 June 2026 &nbsp;·&nbsp; 8 min read</div>
+      <h1>What is a Large Language Model, really?</h1>
+      <p class="standfirst">Everyone keeps saying &ldquo;LLM.&rdquo; Here's what one actually is, explained with autocomplete, a library, and a very confident parrot. No equations, promise.</p>
+      <div class="a-divider"></div>
+
+      <div class="body">
+        <p>You have already used a tiny language model, and you didn't even notice. Every time your phone suggests the next word as you type (&ldquo;See you&rdquo; → &ldquo;soon&rdquo;), something is guessing what comes next. A Large Language Model is that same idea, scaled up almost beyond imagination, until the guessing starts to look a lot like understanding.</p>
+
+        <p>That's the whole secret, and it's worth sitting with: <strong>an LLM is a system that predicts the next word.</strong> Over and over, one word at a time. Everything else, the essays, the code, the poems, the surprisingly good advice, grows out of that single, humble trick.</p>
+
+        <h2>So how does &ldquo;guess the next word&rdquo; become useful?</h2>
+        <p>Imagine you read every book in a vast library. Not skimmed but truly <em>read</em>, and remembered the patterns: how sentences tend to flow, how a recipe is structured, how a polite email opens, what usually follows the phrase &ldquo;the capital of France is.&rdquo; You wouldn't have memorised the books word-for-word. But you'd have absorbed the <em>shape</em> of language so deeply that, given any beginning, you could continue it convincingly.</p>
+        <p>That is roughly what training an LLM does. It reads an enormous amount of text and adjusts itself, billions of tiny times, until it gets very, very good at one question: <em>given everything so far, what word is most likely to come next?</em></p>
+
+        <blockquote>An LLM doesn't look up answers. It generates the most plausible continuation, and plausibility, at this scale, is shockingly close to correctness.</blockquote>
+
+        <h2>The &ldquo;tokens&rdquo; detail (the only jargon you need)</h2>
+        <p>One small correction to what I just said: an LLM doesn't quite work word by word. It works in <strong>tokens</strong>, little chunks of text that are sometimes a whole word (<code>banana</code>), sometimes a piece of one (<code>un</code> + <code>believ</code> + <code>able</code>). Why bother? Because chopping language into reusable pieces lets the model handle any word it meets, even one it's never seen. That's the only piece of vocabulary you need to follow almost any AI conversation.</p>
+
+        <div class="callout">
+          <div class="h">Remember this</div>
+          <p>&ldquo;Large&rdquo; refers to two things: the mountain of text it learned from, and the number of internal dials (its <em>parameters</em>) it tuned during training, often hundreds of billions of them.</p>
+        </div>
+
+        <h2>Why it feels like it understands, and why that's tricky</h2>
+        <p>Here's where the very confident parrot comes in. An LLM is brilliant at producing text that <em>sounds</em> right. Most of the time, sounding right and being right line up. But not always. When they don't, you get what the field calls a <strong>hallucination</strong>: a confident, fluent, completely made-up answer. The model isn't lying; it has no concept of truth. It's doing exactly what it was built to do: produce a plausible continuation. Sometimes the most plausible-sounding sentence simply isn't true.</p>
+        <p>This is the single most important thing to internalise as a new user. An LLM is an extraordinary thinking partner and a terrible source of unchecked facts. Treat it like a sharp, well-read colleague who occasionally bluffs: useful, fast, but worth double-checking on anything that matters.</p>
+
+        <h2>What changed to make them so good?</h2>
+        <p>Language models have existed for decades. Three things turned them from a curiosity into the thing on every front page:</p>
+        <ul>
+          <li><strong>Scale.</strong> More text, more computing power, more parameters, and quality kept climbing instead of plateauing.</li>
+          <li><strong>A clever architecture.</strong> A 2017 design called the <em>transformer</em> let models weigh which earlier words matter most for predicting the next one. (You don't need the maths, just the name.)</li>
+          <li><strong>Human feedback.</strong> After the raw training, people rate the model's answers, teaching it to be helpful and polite rather than merely plausible. This is the step that made chatbots pleasant to talk to.</li>
+        </ul>
+
+        <h2>The one-sentence version</h2>
+        <p>If a friend asks you at dinner what an LLM is, you can now say, truthfully: <em>&ldquo;It's a system trained on huge amounts of text to predict the next chunk of language, and it turns out that doing that really well lets it write, explain, and reason in ways that feel remarkably human.&rdquo;</em> That's it. You're now ahead of most of the headlines. <span class="endmark">■</span></p>
+
+        <div class="callout">
+          <div class="h">Try this next</div>
+          <p>Open any AI chatbot and ask it to explain a topic you already know well: your job, a hobby, your hometown. Notice where it shines and where it bluffs. That gap is the most useful thing a beginner can learn to spot.</p>
+        </div>
+      </div>
+
+      <div class="a-divider"></div>
+      <p><a class="btn" href="../index.html#subscribe">Get the next explainer in your inbox →</a></p>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fname"><span class="the">The</span> AI&nbsp;Khabar</div>
+        <p>AI news, explained for the rest of us. A weekly dispatch for the curious and the soon-to-be-builders.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li class="h">Read</li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog.html">The Blog</a></li>
+          <li><a href="../index.html#membership">Membership</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+        <ul>
+          <li class="h">Elsewhere</li>
+          <li><a href="#" rel="me">Newsletter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="mailto:hello@theaikhabar.com">Email us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="bottom">
+      <span>© <span data-year>2026</span> The AI Khabar. Published independently.</span>
+      <span>Made for the curious.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
